@@ -1,11 +1,9 @@
-# README
+# Smartflix
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A practice rails app for all things movie related
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.7.2
 
 * System dependencies
 
@@ -21,4 +19,12 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+
+* Notes to self on how to use
+
+#### CreateMovieWorker
+```CreateMovieWorker.new.perform```
+
+#### Connect to DB from terminal
+```psql smartflix_development oliver.smith```
