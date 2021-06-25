@@ -4,6 +4,8 @@ VCR.configure do |config|
   config.cassette_library_dir = "fixtures/vcr_cassettes"
   config.hook_into :webmock
   config.ignore_localhost = true
+  config.default_cassette_options = { record: :once,
+                                      match_requests_on: [:body, :method]}
   config.ignore_hosts "chromedriver.storage.googleapis.com"
   config.filter_sensitive_data('apikey') { OMDB_API_KEY }
 end

@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 25 Jun 2021 12:23:15 GMT
+      - Fri, 25 Jun 2021 14:44:31 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -45,13 +45,13 @@ http_interactions:
       Cf-Cache-Status:
       - HIT
       Age:
-      - '75272'
+      - '83748'
       Cf-Request-Id:
-      - 0ae4b8e4680000e6140f300000000001
+      - 0ae53a39e3000006e549a07000000001
       Server:
       - cloudflare
       Cf-Ray:
-      - 664e2a80abb1e614-LHR
+      - 664ef96fda7306e5-LHR
     body:
       encoding: ASCII-8BIT
       string: '{"Title":"Cars","Year":"2006","Rated":"G","Released":"09 Jun 2006","Runtime":"117
@@ -64,5 +64,5 @@ http_interactions:
         Movie Database","Value":"7.1/10"},{"Source":"Rotten Tomatoes","Value":"74%"},{"Source":"Metacritic","Value":"73/100"}],"Metascore":"73","imdbRating":"7.1","imdbVotes":"378,686","imdbID":"tt0317219","Type":"movie","DVD":"01
         Feb 2016","BoxOffice":"$244,082,982","Production":"Walt Disney Pictures, Pixar
         Animation Studios","Website":"N/A","Response":"True"}'
-  recorded_at: Fri, 25 Jun 2021 12:23:15 GMT
+  recorded_at: Fri, 25 Jun 2021 14:44:31 GMT
 recorded_with: VCR 6.0.0
