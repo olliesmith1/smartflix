@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?apikey=apikey&t=Cars
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.omdbapi.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Jun 2021 12:23:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - public, max-age=86400
+      Expires:
+      - Thu, 24 Jun 2021 16:28:43 GMT
+      Last-Modified:
+      - Thu, 24 Jun 2021 15:28:43 GMT
+      Vary:
+      - "*, Accept-Encoding"
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '75272'
+      Cf-Request-Id:
+      - 0ae4b8e4680000e6140f300000000001
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 664e2a80abb1e614-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Title":"Cars","Year":"2006","Rated":"G","Released":"09 Jun 2006","Runtime":"117
+        min","Genre":"Animation, Comedy, Family","Director":"John Lasseter, Joe Ranft","Writer":"John
+        Lasseter, Joe Ranft, Jorgen Klubien","Actors":"Owen Wilson, Bonnie Hunt, Paul
+        Newman","Plot":"A hot-shot race-car named Lightning McQueen gets waylaid in
+        Radiator Springs, where he finds the true meaning of friendship and family.","Language":"English,
+        Italian, Japanese, Yiddish","Country":"United States","Awards":"Nominated
+        for 2 Oscars. 28 wins & 34 nominations total","Poster":"https://m.media-amazon.com/images/M/MV5BMTg5NzY0MzA2MV5BMl5BanBnXkFtZTYwNDc3NTc2._V1_SX300.jpg","Ratings":[{"Source":"Internet
+        Movie Database","Value":"7.1/10"},{"Source":"Rotten Tomatoes","Value":"74%"},{"Source":"Metacritic","Value":"73/100"}],"Metascore":"73","imdbRating":"7.1","imdbVotes":"378,686","imdbID":"tt0317219","Type":"movie","DVD":"01
+        Feb 2016","BoxOffice":"$244,082,982","Production":"Walt Disney Pictures, Pixar
+        Animation Studios","Website":"N/A","Response":"True"}'
+  recorded_at: Fri, 25 Jun 2021 12:23:15 GMT
+recorded_with: VCR 6.0.0
