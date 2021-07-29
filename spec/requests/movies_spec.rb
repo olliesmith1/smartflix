@@ -3,7 +3,7 @@
 # RSpec.describe "Movies", type: :request do
 #   describe "GET /show" do
 #     it "returns http success" do
-#       get "/movies/show"
+#       get "/movies/cars"
 #       expect(response).to have_http_status(:success)
 #     end
 #   end

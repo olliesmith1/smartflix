@@ -17,7 +17,9 @@
 RSpec.configure do |config|
   require 'webmock/rspec'
   require 'simplecov'
-  SimpleCov.start
+  SimpleCov.start do
+
+  end
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

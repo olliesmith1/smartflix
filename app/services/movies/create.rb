@@ -8,7 +8,7 @@ module Movies
 
     def call
       movie = Movie.new(movie_attributes)
-      movie.save!
+      movie.save! if movie.title
     end
 
     private
@@ -17,6 +17,7 @@ module Movies
 
     def movie_attributes
       all_data = fetch_data
+      print_error_to_logs(all_data)
       { title: all_data['Title'],
         year: all_data['Year'],
         rated: all_data['Rated'],
@@ -40,7 +41,13 @@ module Movies
     end
 
     def fetch_data
-      Apis::Omdb::Movie.new(title).call
+      Apis::Omdb.new(title).call
+    end
+
+    def print_error_to_logs(all_data)
+      if all_data['Response'] == 'False'
+        p "#{all_data['Error']} for title #{title}"
+      end
     end
   end
 end
