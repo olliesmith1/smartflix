@@ -1,14 +1,22 @@
-
-Style/Encoding:
-  Enabled: false
-
 Layout/LineLength:
   Max: 121
+
+Metrics/MethodLength:
+  Max: 21
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
 
 AllCops:
   Include:
     - 'spec/workers/create_movie_worker_spec.rb'
-    - 'spec/services/omdb_spec.rb'
+    - 'app/workers/create_movie_worker.rb'
+    - 'spec/services/create_spec.rb'
+    - 'app/services/movies/create.rb'
+    - 'app/controllers/movies_controller.rb'
   Exclude:
     - 'bin/*'
 
