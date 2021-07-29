@@ -16,6 +16,8 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   require 'webmock/rspec'
+  require 'simplecov'
+  SimpleCov.start
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

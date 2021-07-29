@@ -14,8 +14,8 @@ module Movies
     attr_reader :title
 
     def movie_attributes
-      all_data ||= fetch_data
-      @movie_attributes ||= { title: all_data['Title'],
+      all_data = fetch_data
+      { title: all_data['Title'],
                                 year: all_data['Year'],
                                 rated: all_data['Rated'],
                                 released: all_data['Released'],

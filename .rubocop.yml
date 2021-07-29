@@ -1,0 +1,16 @@
+
+Style/Encoding:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 121
+
+AllCops:
+  Include:
+    - 'spec/workers/create_movie_worker_spec.rb'
+    - 'spec/services/omdb_spec.rb'
+  Exclude:
+    - 'bin/*'
+
+
+
