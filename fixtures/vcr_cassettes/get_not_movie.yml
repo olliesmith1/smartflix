@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 29 Jul 2021 20:03:13 GMT
+      - Thu, 29 Jul 2021 20:34:58 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -45,15 +45,15 @@ http_interactions:
       Cf-Cache-Status:
       - HIT
       Age:
-      - '2999'
+      - '4904'
       Accept-Ranges:
       - bytes
       Server:
       - cloudflare
       Cf-Ray:
-      - 6768f3069f774077-LHR
+      - 6769218ae8cece4b-LHR
     body:
       encoding: UTF-8
       string: '{"Response":"False","Error":"Movie not found!"}'
-  recorded_at: Thu, 29 Jul 2021 20:03:13 GMT
+  recorded_at: Tue, 01 Jan 2008 00:00:00 GMT
 recorded_with: VCR 6.0.0

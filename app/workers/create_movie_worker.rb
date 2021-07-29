@@ -11,3 +11,5 @@ class CreateMovieWorker
     Movies::Create.new(title).call
   end
 end
+
+Sidekiq::Cron::Job.create(name: 'CreateMovieWorker - every day at 7am', cron: '0 7 * * *', class: 'CreateMovieWorker')

@@ -46,7 +46,7 @@ module Movies
 
     def print_error_to_logs(all_data)
       if all_data['Response'] == 'False'
-        p "#{all_data['Error']} for title #{title}"
+        puts "#{all_data['Error']} for title #{title} at #{all_data[:timestamp].strftime("%k:%M")} on #{all_data[:timestamp].strftime("%d/%m/%Y")}"
       end
     end
   end

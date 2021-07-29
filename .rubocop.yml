@@ -1,5 +1,5 @@
 Layout/LineLength:
-  Max: 121
+  Max: 150
 
 Metrics/MethodLength:
   Max: 21

@@ -13,7 +13,15 @@ VCR.configure do |config|
 end
 
 RSpec.describe Apis::Omdb do
-  it 'should return a movie when provided with a title' do
+  before do
+    Timecop.freeze(Time.local(2008))
+  end
+
+  after do
+    Timecop.return
+  end
+
+  it 'should return a movie when provided with a title', aggregate_failures: true do
     VCR.use_cassette 'get_movie' do
       movie = Apis::Omdb.new('Cars').call
       expect(movie['Title']).to eq('Cars')
@@ -23,11 +31,12 @@ RSpec.describe Apis::Omdb do
     end
   end
 
-  it 'should return a movie when provided with a title' do
+  it 'should return a movie when provided with a title', aggregate_failures: true do
     VCR.use_cassette 'get_not_movie' do
       data = Apis::Omdb.new('notmovie').call
       expect(data['Response']).to eq('False')
       expect(data['Error']).to eq('Movie not found!')
+      expect(data[:timestamp]).to eq('2008-01-01 00:00:00.000000000 +0000')
     end
   end
 end

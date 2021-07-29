@@ -37,6 +37,7 @@ group :development, :test do
   gem 'faker'
   gem 'factory_bot_rails'
   gem 'vcr'
+  gem "sidekiq-cron", "~> 1.1"
 end
 
 group :development do
@@ -54,6 +55,7 @@ group :test do
   gem 'database_cleaner-active_record'
   gem "webmock"
   gem 'simplecov', require: false
+  gem 'timecop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

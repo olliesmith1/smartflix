@@ -20,7 +20,7 @@ module Apis
       params = { t: title, apikey: OMDB_API_KEY }
       uri.query = URI.encode_www_form(params)
       res = Net::HTTP.get_response(uri)
-      JSON.parse(res.body)
+      JSON.parse(res.body).merge!(timestamp: Time.now)
     end
   end
 end
