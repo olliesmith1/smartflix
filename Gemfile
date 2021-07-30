@@ -38,6 +38,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'vcr'
   gem "sidekiq-cron", "~> 1.1"
+  gem 'whenever', require: false
 end
 
 group :development do
