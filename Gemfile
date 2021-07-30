@@ -39,6 +39,7 @@ group :development, :test do
   gem 'vcr'
   gem "sidekiq-cron", "~> 1.1"
   gem 'whenever', require: false
+  gem 'sidekiq-scheduler'
 end
 
 group :development do

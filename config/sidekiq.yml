@@ -2,3 +2,8 @@
 :queues:
   - default
   - movies
+
+:schedule:
+  update_movies:
+    cron: '0 * * * * *'   # Runs once per minute
+    class: UpdateMoviesWorker

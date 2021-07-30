@@ -17,7 +17,7 @@ module Movies
 
     def movie_attributes
       all_data = fetch_data
-      print_error_to_logs(all_data)
+      print_error(all_data)
       { title: all_data['Title'],
         year: all_data['Year'],
         rated: all_data['Rated'],
@@ -44,7 +44,7 @@ module Movies
       Apis::Omdb.new(title).call
     end
 
-    def print_error_to_logs(all_data)
+    def print_error(all_data)
       if all_data['Response'] == 'False'
         puts "#{all_data['Error']} for title #{title} at #{all_data[:timestamp].strftime("%k:%M")} on #{all_data[:timestamp].strftime("%d/%m/%Y")}"
       end
