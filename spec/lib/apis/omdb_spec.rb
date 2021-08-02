@@ -31,12 +31,12 @@ RSpec.describe Apis::Omdb do
     end
   end
 
-  it 'should return a movie when provided with a title', aggregate_failures: true do
+  it 'should return an error when provided with a false title', aggregate_failures: true do
     VCR.use_cassette 'get_not_movie' do
       data = Apis::Omdb.new('notmovie').call
       expect(data['Response']).to eq('False')
       expect(data['Error']).to eq('Movie not found!')
-      expect(data[:timestamp]).to eq('2008-01-01 00:00:00.000000000 +0000')
+      expect(data['Timestamp']).to eq('2008-01-01 00:00:00.000000000 +0000')
     end
   end
 end
