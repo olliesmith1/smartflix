@@ -5,5 +5,5 @@
 
 :schedule:
   update_movies:
-    cron: '0 * * * * *'   # Runs once per minute
+    cron: '0 * * * * *'
     class: UpdateMoviesWorker

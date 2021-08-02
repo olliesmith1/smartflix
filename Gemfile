@@ -40,6 +40,7 @@ group :development, :test do
   gem "sidekiq-cron", "~> 1.1"
   gem 'whenever', require: false
   gem 'sidekiq-scheduler'
+  gem 'pry', '~> 0.13.1'
 end
 
 group :development do

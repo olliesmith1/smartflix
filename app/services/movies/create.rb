@@ -16,7 +16,10 @@ module Movies
     attr_reader :title
 
     def movie_attributes
-      print_error(movie_data)
+      if movie_data['Response'] == 'False'
+        print_error(movie_data)
+        return
+      end
       movie_attributes = {}
       movie_data.each do |key, value|
         next if key == 'Type'
@@ -25,14 +28,13 @@ module Movies
       movie_attributes
     end
 
-    def fetch_data
+    def movie_data
       @movie_data ||= Apis::Omdb.new(title).call
     end
 
     def print_error(all_data)
-      if all_data['Response'] == 'False'
-        puts "#{all_data['Error']} for title #{title} at #{all_data[:timestamp].strftime("%k:%M")} on #{all_data[:timestamp].strftime("%d/%m/%Y")}"
-      end
+      time = DateTime.parse(all_data['Timestamp'])
+      puts "#{all_data['Error']} for title #{title} at #{time.strftime("%k:%M")} on #{time.strftime("%d/%m/%Y")}"
     end
   end
 end
