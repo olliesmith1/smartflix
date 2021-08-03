@@ -7,15 +7,18 @@ module Movies
     end
 
     def call
-      up_to_date_movie = Movie.new(movie_attributes)
-      if up_to_date_movie == @movie
+      if refreshed_movie == @movie
         @movie.touch
       else
-        @movie.update(up_to_date_movie.attributes)
+        @movie.update(refreshed_movie.attributes)
       end
     end
 
     private
+
+    def refreshed_movie
+      @refreshed_movie ||= Movie.new(movie_attributes)
+    end
 
     def movie_attributes
       movie_attributes = {}
