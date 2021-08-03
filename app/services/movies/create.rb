@@ -33,8 +33,9 @@ module Movies
     end
 
     def print_error(all_data)
-      time = DateTime.parse(all_data['Timestamp'])
-      puts "#{all_data['Error']} for title #{title} at #{time.strftime("%k:%M")} on #{time.strftime("%d/%m/%Y")}"
+      time = Time.now
+      timestamp = "#{time.strftime("%k:%M")} on #{time.strftime("%d/%m/%Y")}"
+      puts "#{all_data['Error']} for title #{title} at #{timestamp}"
     end
   end
 end

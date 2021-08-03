@@ -11,7 +11,6 @@ class UpdateMoviesWorker
       if movie.updated_at < 2.days.ago
         movie.destroy
       else
-        puts "*********"
         Movies::Update.new(movie).call
       end
     end

@@ -21,7 +21,7 @@ RSpec.describe Apis::Omdb do
     Timecop.return
   end
 
-  it 'should return a movie when provided with a title', aggregate_failures: true do
+  it 'should return movie data when provided with a title', aggregate_failures: true do
     VCR.use_cassette 'get_movie' do
       movie = Apis::Omdb.new('Cars').call
       expect(movie['Title']).to eq('Cars')
@@ -36,7 +36,7 @@ RSpec.describe Apis::Omdb do
       data = Apis::Omdb.new('notmovie').call
       expect(data['Response']).to eq('False')
       expect(data['Error']).to eq('Movie not found!')
-      expect(data['Timestamp']).to eq('2008-01-01 00:00:00.000000000 +0000')
+      # expect{ Apis::Omdb.new('notmovie').call }.to output("Movie not found! for title notmovie at 00:00 on 01/01/2008").to_stdout
     end
   end
 end

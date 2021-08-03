@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe UpdateMoviesWorker, type: :worker do
   describe '#perform' do
 
+    subject { described_class.new.perform }
     let(:service) { instance_double('Movies::Update') }
     let(:new_movie) { create(:movie, updated_at: 1.days.ago) }
     let(:old_movie) { create(:movie, updated_at: 4.days.ago) }
@@ -20,7 +21,7 @@ RSpec.describe UpdateMoviesWorker, type: :worker do
       it 'calls the update service', aggregate_failures: true do
         expect(Movies::Update).to receive(:new).with(new_movie)
         expect(service).to receive(:call)
-        UpdateMoviesWorker.new.perform
+        subject
       end
     end
 
@@ -32,7 +33,7 @@ RSpec.describe UpdateMoviesWorker, type: :worker do
 
       it 'gets deleted', aggregate_failures: true do
         old_movie_id = old_movie.id
-        expect{ UpdateMoviesWorker.new.perform }.to change{ Movie.all.size }.by(-1)
+        expect{ subject }.to change{ Movie.all.size }.by(-1)
         expect(Movie.exists?(old_movie_id)).to be_falsey
       end
     end

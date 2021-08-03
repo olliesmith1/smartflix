@@ -9,8 +9,8 @@ RSpec.describe Movies::Update do
 
     let(:api_call) { instance_double('Apis::Omdb') }
     let(:movie) { build(:movie) }
-    let(:identical_movie_data) { { "Title"=>"Cars", "imdbVotes"=>"380,993", "Response"=>"True", "Timestamp"=>"2008-01-01 12:03:13.004339 +0100" } }
-    let(:updated_movie_data) { { "Title"=>"Cars", "imdbVotes"=>"400,678", "Response"=>"True", "Timestamp"=>"2008-01-01 12:03:13.004339 +0100" } }
+    let(:identical_movie_data) { { "Title"=>"Cars", "imdbVotes"=>"380,993", "Response"=>"True" } }
+    let(:updated_movie_data) { { "Title"=>"Cars", "imdbVotes"=>"400,678", "Response"=>"True" } }
 
     before do
       allow(Apis::Omdb).to receive(:new).and_return(api_call)
