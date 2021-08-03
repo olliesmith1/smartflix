@@ -5,5 +5,5 @@
 
 :schedule:
   update_movies:
-    cron: '0 * * * * *'
+    cron: '0 7 * * * *'
     class: UpdateMoviesWorker

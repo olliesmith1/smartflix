@@ -32,10 +32,10 @@ module Movies
       @movie_data ||= Apis::Omdb.new(title).call
     end
 
-    def print_error(all_data)
+    def print_error(movie_data)
       time = Time.now
       timestamp = "#{time.strftime("%k:%M")} on #{time.strftime("%d/%m/%Y")}"
-      puts "#{all_data['Error']} for title #{title} at #{timestamp}"
+      Rails.logger.error "#{movie_data['Error']} for title #{title} at #{timestamp}"
     end
   end
 end

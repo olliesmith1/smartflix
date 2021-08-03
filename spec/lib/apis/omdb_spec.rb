@@ -31,12 +31,19 @@ RSpec.describe Apis::Omdb do
     end
   end
 
-  it 'should return an error when provided with a false title', aggregate_failures: true do
+  it 'should return error data when provided with a false title', aggregate_failures: true do
     VCR.use_cassette 'get_not_movie' do
       data = Apis::Omdb.new('notmovie').call
       expect(data['Response']).to eq('False')
       expect(data['Error']).to eq('Movie not found!')
-      # expect{ Apis::Omdb.new('notmovie').call }.to output("Movie not found! for title notmovie at 00:00 on 01/01/2008").to_stdout
     end
   end
+  #
+  # it 'should log an error when provided with a false title' do
+  #   VCR.use_cassette 'get_not_movie' do
+  #     # Apis::Omdb.new('notmovie').call
+  #     expect(Rails.logger).to receive(:error)
+  #   end
+  # end
+
 end

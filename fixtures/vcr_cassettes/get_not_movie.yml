@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 02 Aug 2021 09:32:04 GMT
+      - Tue, 03 Aug 2021 11:28:58 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -45,13 +45,13 @@ http_interactions:
       Cf-Cache-Status:
       - HIT
       Age:
-      - '64'
+      - '93478'
       Accept-Ranges:
       - bytes
       Server:
       - cloudflare
       Cf-Ray:
-      - 67864c026851f3e7-LHR
+      - 678f349db99c53df-LHR
     body:
       encoding: UTF-8
       string: '{"Response":"False","Error":"Movie not found!"}'
