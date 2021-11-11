@@ -1,0 +1,6 @@
+.gitignore
+spec
+coverage
+log
+node_modules
+.env

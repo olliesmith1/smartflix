@@ -37,7 +37,7 @@ bundle exec sidekiq
 ```
 * How to use
 
-Enter a movie name after 'movies/' in the url to add a movie to the database. (only one word movies allowed)
+Enter a movie name after 'movies/' in the url to add a movie to the database.
 
 Wait until 7am each day to see the database updated
 
