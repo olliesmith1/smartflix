@@ -1,20 +1,17 @@
 FROM ruby:2.7.2
 
-RUN apk add --update --virtual \
-    runtime-deps \
-    postgresql-client \
-    nodejs \
-    yarn \
-    && rm -rf /var/cache/apk/*
+ENV WORKDIR /app
 
-WORKDIR /smartflix
-COPY . /smartflix/
+WORKDIR $WORKDIR
 
-ENV BUNDLE_PATH /gems
-RUN yarn install
+COPY . $WORKDIR
+
 RUN bundle install
 
-ENTRYPOINT ["bin/rails"]
-CMD ["s", "-b", "0.0.0.0"]
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -y yarn
 
-EXPOSE 3000
+RUN yarn install --check-files
+
+CMD rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0
