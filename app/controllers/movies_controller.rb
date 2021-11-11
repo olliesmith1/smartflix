@@ -14,4 +14,9 @@ class MoviesController < ApplicationController
       CreateMovieWorker.perform_async(title)
     end
   end
+
+  def index
+    @movies = Movie.all
+    render "index"
+  end
 end
