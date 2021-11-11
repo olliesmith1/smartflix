@@ -3,7 +3,10 @@
 <ul>
   <% @movies.each do |movie| %>
     <li>
-      <span><%= movie.title %></span>
+      <span><%= movie.title %></span><br>
+      <span>Released: <%= movie.released %></span><br>
+      <img src="<%= movie.poster %>" class="poster">
+      <span>Rating: <%= movie.imdb_rating %> from <%= movie.imdb_votes %> votes</span><br>
     </li>
   <% end %>
 </ul>
