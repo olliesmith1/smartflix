@@ -11,3 +11,18 @@
       %span
         Rating: #{movie.imdb_rating} from #{movie.imdb_votes} votes
       %br/
+
+%nav{"aria-label" => "Page navigation example"}
+  %ul.pagination
+    %li.page-item
+      %a.page-link{"aria-label" => "Previous", :href => "#"}
+        %span{"aria-hidden" => "true"} «
+    %li.page-item
+      %a.page-link{:href => "#"} 1
+    %li.page-item
+      %a.page-link{:href => "#"} 2
+    %li.page-item
+      %a.page-link{:href => "#"} 3
+    %li.page-item
+      %a.page-link{"aria-label" => "Next", :href => "#"}
+        %span{"aria-hidden" => "true"} »
