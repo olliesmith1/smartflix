@@ -1,0 +1,13 @@
+%h1 hey index
+%ul
+  - @movies.each do |movie|
+    %li
+      %span= movie.title
+      %br/
+      %span
+        Released: #{movie.released}
+      %br/
+      %img.poster{:src => "#{movie.poster}"}/
+      %span
+        Rating: #{movie.imdb_rating} from #{movie.imdb_votes} votes
+      %br/

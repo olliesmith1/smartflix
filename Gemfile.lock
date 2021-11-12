@@ -86,6 +86,7 @@ GEM
       railties (>= 3.2)
     e2mmap (0.1.0)
     erubi (1.10.0)
+    erubis (2.7.0)
     et-orbi (1.2.4)
       tzinfo
     factory_bot (6.2.0)
@@ -101,7 +102,21 @@ GEM
       raabro (~> 1.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
+    haml-rails (2.0.1)
+      actionpack (>= 5.1)
+      activesupport (>= 5.1)
+      haml (>= 4.0.6, < 6.0)
+      html2haml (>= 1.0.1)
+      railties (>= 5.1)
     hashdiff (1.0.1)
+    html2haml (2.2.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0, < 6)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -191,6 +206,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
+    ruby_parser (3.18.1)
+      sexp_processor (~> 4.16)
     rufus-scheduler (3.8.0)
       fugit (~> 1.1, >= 1.1.6)
     sass-rails (6.0.0)
@@ -204,6 +221,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    sexp_processor (4.16.0)
     sidekiq (6.1.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -232,6 +250,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    temple (0.8.2)
     thor (1.1.0)
     thwait (0.2.0)
       e2mmap
@@ -274,6 +293,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  haml-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
