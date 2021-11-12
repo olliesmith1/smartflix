@@ -30,6 +30,7 @@ gem 'sidekiq'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem "haml-rails"
 gem 'popper_js', '~> 2.9.3'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

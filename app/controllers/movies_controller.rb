@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    @movies = Kaminari.paginate_array(Movie.all).page(params[:page]).per(3)
     render "index"
   end
 end
