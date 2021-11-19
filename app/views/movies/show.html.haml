@@ -1,2 +1,5 @@
-%h1 Movies#show
-%p Find me in app/views/movies/show.html.erb
+%div.basic
+  %h1 #{@movie.title}
+  %img.poster{:src => "#{@movie.poster}"}/
+  %p Released: #{@movie.released}
+  %p Rating: #{@movie.imdb_rating} from #{@movie.imdb_votes} votes

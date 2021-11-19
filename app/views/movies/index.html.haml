@@ -1,29 +1,19 @@
-%h1 hey index
-= paginate @movies
--#%nav{"aria-label" => "Page navigation example"}
--#  %ul.pagination.justify-content-center.pagination-lg
--#    %li.page-item
--#      %a.page-link{"aria-label" => "Previous", :href => "#"}
--#        %span{"aria-hidden" => "true"} «
--#    %li.page-item
--#      %a.page-link{:href => "#"} 1
--#    %li.page-item
--#      %a.page-link{:href => "#"} 2
--#    %li.page-item
--#      %a.page-link{:href => "#"} 3
--#    %li.page-item
--#      %a.page-link{"aria-label" => "Next", :href => "#"}
--#        %span{"aria-hidden" => "true"} »
-%ul
-  - @movies.each do |movie|
-    %li
-      %span= movie.title
-      %br/
-      %span
-        Released: #{movie.released}
-      %br/
-      %img.poster{:src => "#{movie.poster}"}/
-      %span
-        Rating: #{movie.imdb_rating} from #{movie.imdb_votes} votes
-      %br/
-= paginate @movies
+%div.basic
+  = paginate @movies
+%div.basic
+  %table
+    %tr
+      %th Movie
+      %th Released
+      %th Rating
+      %th
+    - @movies.each do |movie|
+      %tr.unit
+        %td
+          %img.poster{:src => "#{movie.poster}"}/
+          = movie.title
+        %td= movie.released
+        %td #{movie.imdb_rating} from #{movie.imdb_votes} votes
+        %td= button_to "View", movies_path(:id), method: 'get'
+%div.basic
+  = paginate @movies
