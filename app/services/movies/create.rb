@@ -9,6 +9,11 @@ module Movies
     def call
       movie = Movie.new(movie_attributes)
       movie.save! if movie.title
+      external_rating = ExternalRating.new(movie_id: movie.id,
+                                           imdb_rating: movie_attributes[:ratings][0]['Value'],
+                                           rotten_tomatoes_rating: movie_attributes[:ratings][1]['Value'],
+                                           metacritic_rating: movie_attributes[:ratings][2]['Value'])
+      external_rating.save! if movie.title
     end
 
     private

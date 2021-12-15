@@ -8,9 +8,9 @@ class MoviesController < ApplicationController
       render "show", status: :ok
     else
       render json: {
-        error: "Movie with title #{title} not found. We have requested this to be added to our library."
+        error: "Movie with title #{params[:title]} not found. We have requested this to be added to our library."
       }, status: :not_found
-      CreateMovieWorker.perform_async(title)
+      CreateMovieWorker.perform_async(params[:title])
     end
   end
 

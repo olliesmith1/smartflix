@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get '/movies/:title', to: 'movies#show'
   resources :movies
   mount Sidekiq::Web => '/sidekiq'
 

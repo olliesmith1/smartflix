@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_02_112906) do
+ActiveRecord::Schema.define(version: 2021_12_15_163854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "external_ratings", force: :cascade do |t|
+    t.integer "movie_id"
+    t.float "imdb_rating"
+    t.float "rotten_tomatoes_rating"
+    t.float "metacritic_rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_movies_on_movie_id"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
